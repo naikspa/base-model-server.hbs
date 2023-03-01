@@ -1,9 +1,23 @@
 import { Router } from "express";
 
-import { renderPage } from "../controllers/controller";
+import {
+  renderIndex,
+  renderContact,
+  getEmail,
+  index2,
+  renderEmails,
+} from "../controllers/controller";
 
 const router = Router();
 
-router.get("/", renderPage);
+router.get("/", renderIndex);
+
+router.post("/email", getEmail);
+
+router.get("/inicio", index2);
+
+router.get("/contact", renderContact);
+
+router.get("/admin/emails", renderEmails);
 
 export default router;
