@@ -1,4 +1,5 @@
 import Data from "../models/Data";
+import Contact from "../models/Contact";
 
 export const renderIndex = async (req, res) => {
   const data = await Data.find().lean();
@@ -20,10 +21,26 @@ export const index2 = (req, res) => {
 };
 
 export const renderContact = async (req, res) => {
-  res.render("contact");
+  const con = await Contact.find().lean();
+  res.render("contact", { x: con });
 };
 
 export const renderEmails = async (req, res) => {
   const data = await Data.find().lean();
   res.render("emails", { x: data });
+};
+
+export const sendContact = async (req, res) => {
+  try {
+    const con = new Contact({
+      cName: req.body.cName,
+      cSurname: req.body.cSurname,
+      cEmail: req.body.cEmail,
+      cNumber: req.body.cEmail,
+    });
+    con.save();
+    res.redirect("/inicio");
+  } catch (error) {
+    console.log(error);
+  }
 };

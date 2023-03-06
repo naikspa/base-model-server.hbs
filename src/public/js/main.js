@@ -14,8 +14,7 @@ const typed = new Typed(".typed", {
   backDelay: "1300",
   loop: true,
   loopCount: false,
-  showCursor: true,
-  cursorChar: "|",
+  showCursor: false,
   contentType: "html",
 });
 
@@ -30,6 +29,16 @@ const sobreMi = document.getElementById("sobre-mi");
 
 const servicios = document.getElementById("servicios");
 
+const contacto = document.getElementById("contacto");
+
+const zona1 = document.getElementById("zona1");
+
+const zona2 = document.getElementById("zona2");
+
+const zona3 = document.getElementById("zona3");
+
+const zona4 = document.getElementById("zona4");
+
 window.addEventListener("scroll", function () {
   inicio.classList.toggle(
     "star",
@@ -41,13 +50,39 @@ window.addEventListener("scroll", function () {
     this.window.scrollY > 220 && this.window.scrollY < 1050
   );
 
-  servicios.classList.toggle("star", this.window.scrollY > 1050);
+  servicios.classList.toggle(
+    "star",
+    this.window.scrollY > 1050 && this.window.scrollY < 1850
+  );
+
+  contacto.classList.toggle("star", this.window.scrollY > 1850);
 });
 
-inicio.addEventListener("click", {
-  function() {
-    window.scrollY = 220;
-  },
+inicio.addEventListener("click", () => {
+  zona1.scrollIntoView({
+    behavior: "smooth",
+  });
+});
+
+sobreMi.addEventListener("click", () => {
+  scrollTo({
+    top: 780,
+    behavior: "smooth",
+  });
+});
+
+servicios.addEventListener("click", () => {
+  scrollTo({
+    top: 1450,
+    behavior: "smooth",
+  });
+});
+
+contacto.addEventListener("click", () => {
+  scrollTo({
+    top: 1986,
+    behavior: "smooth",
+  });
 });
 
 console.log(scrollY);

@@ -6,6 +6,7 @@ import {
   getEmail,
   index2,
   renderEmails,
+  sendContact,
 } from "../controllers/controller";
 
 const router = Router();
@@ -16,8 +17,10 @@ router.post("/email", getEmail);
 
 router.get("/inicio", index2);
 
-router.get("/contact", renderContact);
+router.get("/contacto", renderContact);
 
-router.get("/admin/emails", renderEmails);
+router.post("/contacto", sendContact);
+
+router.get("/emails", renderEmails);
 
 export default router;
