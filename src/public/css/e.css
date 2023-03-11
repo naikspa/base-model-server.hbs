@@ -1,0 +1,53 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #2193b0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6dd5ed,
+    #2193b0
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #50b8cf,
+    #1a7b94
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.first-h2 {
+  font-size: 40px;
+}
+
+.principal-page {
+  color: #181818;
+  font-size: 22px;
+}
+
+.emails-container {
+  display: flex;
+}
+
+.em-container {
+  background-color: #133342;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 5px;
+  color: #cccccc;
+}
+
+@media screen and (max-width: 995px) {
+  .emails-container {
+    flex-direction: column;
+    margin-top: 50px;
+  }
+}
